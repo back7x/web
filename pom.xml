@@ -7,7 +7,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>web Maven Webapp</name>
 	<url>http://maven.apache.org</url>
-	
+
 	<repositories>
 		<repository>
 			<id>nexus-repos</id>
@@ -15,11 +15,11 @@
 			<url>http://localhost:8081/repository/maven-public/</url>
 		</repository>
 	</repositories>
-	
+
 	<properties>
 		<springversion>3.1.1.RELEASE</springversion>
 	</properties>
-	
+
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
@@ -33,7 +33,7 @@
 			<version>2.5</version>
 			<scope>provided</scope>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-aop</artifactId>
@@ -166,8 +166,19 @@
 			<artifactId>commons-logging</artifactId>
 			<version>1.1</version>
 		</dependency>
+		
+		<dependency>
+			<groupId>com.jolbox</groupId>
+			<artifactId>bonecp</artifactId>
+			<version>0.8.0.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.22</version>
+		</dependency>
 	</dependencies>
-	
+
 	<build>
 		<plugins>
 			<plugin>
@@ -180,6 +191,15 @@
 				</configuration>
 			</plugin>
 		</plugins>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>false</filtering>
+				<includes>
+					<include>**</include>
+				</includes>
+			</resource>
+		</resources>
 		<finalName>web</finalName>
 	</build>
 </project>
